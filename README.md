@@ -1,9 +1,11 @@
-# StarwarsAPIAngular
+# StarwarsAPIAngular :earth_asia:
 
-A simple Angular 4 project that fetches 10 characters from Star Wars using SWAPI and organizes them randomly on either DARK side or LIGHT side.
+A simple Angular 4 project that fetches 10 characters of Star Wars using SWAPI and organizes them randomly on either DARK side or LIGHT side.
 The sides can be toggled to view characters and new characters can also be added to the respective sides.
 
-## Angular features implemented
+
+
+## Angular features implemented :loudspeaker:
 * Service
 * Dependency Injection
 * Two way binding
@@ -15,11 +17,16 @@ The sides can be toggled to view characters and new characters can also be added
 * Reactive Forms
 * HttpClient Module for SWAPI
 
-## Stack
+## Stack :snowflake:
 * Angular 4
 * Angular CLI
 * RxJS
 * TypeScript
+
+* [SWAPI](https://swapi.co/) - The Star Wars API used. :space_invader:
+
+
+![img](https://i.imgur.com/uZmjlcL.png)
 
 
 ## Development server
