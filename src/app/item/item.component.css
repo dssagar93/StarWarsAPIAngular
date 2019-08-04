@@ -1,0 +1,13 @@
+
+.btnDark{
+    margin-left: 1em;
+}
+.lightBg{
+    background-color: white;
+}
+.darkBg h5{
+        color: white;
+}
+.darkBg{
+    background-color: gray;
+}

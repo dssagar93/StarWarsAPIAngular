@@ -4,6 +4,7 @@ import { Subject } from "rxjs";
 import {HttpClient} from '@angular/common/http'
 
 import { map } from "rxjs/operators";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 @Injectable()
 
@@ -30,9 +31,9 @@ export class StarwarsService {
       console.log(data);
       const extractedChars=data;
 
-      const chars=extractedChars.map((char)=>{
-
-          return  {name:char.name,side:''}
+      const chars=extractedChars.map((char,index)=>{
+          console.log(index);
+          return  {name:char.name,side:index%2==0?'light':'dark'}
       });
 
       console.log(chars);
@@ -53,14 +54,20 @@ export class StarwarsService {
   }
 
   onSideChosen(charInfo) {
+    console.log(charInfo);
     const pos = this.characters.findIndex((char) => {
       return char.name === charInfo.name;
     });
-
-    this.characters[pos].side = charInfo.side;
-    this.charactersChanged.next();
-    this.logService.writeLogToConsole("Input side changed of "+charInfo.name+" to :"+ charInfo.side);
-    
+    if(this.characters[pos].side==charInfo.side)
+    {
+      Swal.fire('The character is already on the '+ charInfo.side+' side');
+    }
+    else
+    {
+      this.characters[pos].side = charInfo.side;
+      this.charactersChanged.next();
+      Swal.fire('Moved to '+ charInfo.side+' side');
+    }
   }
 
   addCharacter(name,side){
@@ -75,5 +82,7 @@ export class StarwarsService {
       console.log(name);
       console.log(newChar);
       this.characters.push(newChar);
+      Swal.fire('Added');
+
   }
 }

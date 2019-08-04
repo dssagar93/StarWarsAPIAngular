@@ -9,12 +9,12 @@ import { RouterModule } from '@angular/router';
 const routes = [
     {
         path: 'characters', component: TabsComponent, children: [
-            { path: '', redirectTo: 'all', pathMatch: 'full' },
+            { path: '', redirectTo: 'light', pathMatch: 'full' },
             { path: ':side', component: ListsComponent }
         ]
     },
     { path: 'AddCharacter', loadChildren: './create-character/create-character.module#CreateCharacterModule' },
-    { path: '**', redirectTo: '/characters' }
+    { path: '**', redirectTo: '/characters/light' }
 ]
 
 
